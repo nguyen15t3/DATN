@@ -1,0 +1,81 @@
+package inputdata;
+
+import java.io.BufferedReader;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonStreamParser;
+import com.google.gson.stream.JsonReader;
+
+public class ReadFileJson {
+	
+	public static void main(String[] args) {
+		JSONParser jsonParser = new JSONParser();
+		 
+		try  {
+			
+			// Read JSON file
+			/*
+			 * reader = new BufferedReader(new FileReader("university")); JsonStreamParser p
+			 * = new JsonStreamParser(reader); JsonArray arr = (JsonArray) p.next(); for(int
+			 * i=0;i<arr.size();i++) { JsonElement arrayElement = arr.get(i);
+			 * parseEmployeeObject(arrayElement); }
+			 */
+			Object obj = jsonParser.parse(new FileReader("university"));
+			
+			System.out.println(obj);
+			JSONObject jsonObject = (JSONObject) obj;
+			parseEmployeeObject(jsonObject);
+			//JSONArray employeeList = (JSONArray) obj;
+		//	System.out.println(employeeList);
+
+			// Iterate over employee array
+			//employeeList.forEach(emp -> parseEmployeeObject((JSONObject) emp));
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void parseEmployeeObject(JSONObject jsonObject) {
+		//DiemChuan[] diemchuan_datas = (DiemChuan[]) employee.get("diemchuan_datas");
+		
+		
+		// Get employee object within list
+		University_meta univer = new University_meta();
+		// Get employee first name
+		
+		String url =  (String) jsonObject.get("url");// (String) employeeObject.get("url");
+		System.out.println(url);
+
+		// Get employee last name
+		String university_code = (String) jsonObject.get("university_code");
+		System.out.println(university_code);
+
+		// Get employee website name
+		String university_name =(String) jsonObject.get("university_name");	
+		System.out.println(university_name);
+		
+		
+		
+	}
+
+}
+
+

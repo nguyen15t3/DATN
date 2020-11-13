@@ -1,0 +1,32 @@
+package inputdata;
+
+import java.io.BufferedReader;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonStreamParser;
+import com.google.gson.stream.JsonReader;
+
+public class ReadFileJson {
+	
+	public static void main(String[] args) {
+		
+		 
+		
+			
+		}
+
+}
+
+

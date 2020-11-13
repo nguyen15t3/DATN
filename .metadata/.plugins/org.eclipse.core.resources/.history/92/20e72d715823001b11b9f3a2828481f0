@@ -1,0 +1,13 @@
+package inputdata;
+
+public class University_data {
+	private University_meta university_meta;
+	private DiemChuan[] diemchuan_datas;
+	
+	public University_data() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+}
